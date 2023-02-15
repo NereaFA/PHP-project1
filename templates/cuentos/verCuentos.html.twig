@@ -1,0 +1,25 @@
+{% extends "cuentos/base.html.twig" %}
+{% block contenido %}
+
+<h2>Listado de Cuentos </h2>
+<div class="row row-cols-1 row-cols-md-2"> {# PARA CADA POKEMON #}
+      {% for cuento in cuentos  %} {# cuento viene de cuentosController #}
+      <div class="col mb-4" >
+            <div class="card" style="width: 18rem;"> {# <img src="{{cuento.img}}" class="card-img-top"> #}
+                  <div class="card-body">
+                        <h5 class="card-title">{{cuento.titulo}}</h5>
+                        <img src="{{cuento.imagen}}" class="card-img-top">
+                        <p class="card-text">{{cuento.escritor}}</p>
+                        <p class="card-text">{{cuento.año}}</p>
+                        <p class="card-text">{{cuento.id}}</p>
+
+                  </div>
+            </div>
+      </div> {# FIN PARA FIN PARA #}
+      {% endfor %}
+</div>
+
+
+{% endblock %}
+
+{#class="card-img-top" clase para imagenes#}
